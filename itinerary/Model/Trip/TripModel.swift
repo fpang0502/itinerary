@@ -10,11 +10,11 @@ import Foundation
 
 
 class TripModel {
-    var id: String! // required
-    var title: String! // required
+    let id: UUID // once the value is set, it's never changed, that's why it's 'let'
+    var title: String // required
     
     init(title: String) {
-        id = UUID().uuidString
+        id = UUID()
         self.title = title
     }
 }

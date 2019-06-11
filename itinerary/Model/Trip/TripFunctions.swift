@@ -15,7 +15,7 @@ class TripFunctions {
     
     // readTrips, but have a background thread to execute so it doesn't block UI
     // completion handler
-    static func readTrip(completion: @escaping () -> ()) {
+    static func readTrips(completion: @escaping () -> ()) {
         // Dispatch Queue manages what work occurs on what threads
         // Quality of Service (qos) defines the priority for the threads
         //  .userInteractive: highest priority
