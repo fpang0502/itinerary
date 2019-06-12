@@ -91,11 +91,6 @@ class PageCell: UICollectionViewCell {
 }
 
 
-
-
-
-
-
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
     guard let input = input else { return nil }

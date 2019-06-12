@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02AC488A22B0982900305BAE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AC488922B0982900305BAE /* TabBarViewController.swift */; };
+		02AC488C22B09AEE00305BAE /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AC488B22B09AEE00305BAE /* ScanningViewController.swift */; };
+		02AC488E22B09AF900305BAE /* MasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AC488D22B09AF900305BAE /* MasksViewController.swift */; };
+		02AC489022B09B0400305BAE /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AC488F22B09B0400305BAE /* ContactViewController.swift */; };
 		02BD849522B03377003BC5A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD849422B03377003BC5A9 /* AppDelegate.swift */; };
 		02BD849C22B03378003BC5A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02BD849B22B03378003BC5A9 /* Assets.xcassets */; };
 		02BD849F22B03378003BC5A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BD849D22B03378003BC5A9 /* LaunchScreen.storyboard */; };
@@ -39,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02AC488922B0982900305BAE /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		02AC488B22B09AEE00305BAE /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
+		02AC488D22B09AF900305BAE /* MasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasksViewController.swift; sourceTree = "<group>"; };
+		02AC488F22B09B0400305BAE /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		02BD849122B03377003BC5A9 /* itinerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itinerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02BD849422B03377003BC5A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02BD849B22B03378003BC5A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +91,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02AC488422B096F600305BAE /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02BD84DA22B07B89003BC5A9 /* HomeViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		02AC488522B0971000305BAE /* ScanningViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02AC488B22B09AEE00305BAE /* ScanningViewController.swift */,
+			);
+			path = ScanningViewController;
+			sourceTree = "<group>";
+		};
+		02AC488622B0971800305BAE /* MasksViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02AC488D22B09AF900305BAE /* MasksViewController.swift */,
+			);
+			path = MasksViewController;
+			sourceTree = "<group>";
+		};
+		02AC488722B0972C00305BAE /* ContactViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02AC488F22B09B0400305BAE /* ContactViewController.swift */,
+			);
+			path = ContactViewController;
+			sourceTree = "<group>";
+		};
+		02AC488822B097C300305BAE /* TabBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02AC488922B0982900305BAE /* TabBarViewController.swift */,
+				02AC488422B096F600305BAE /* HomeViewController */,
+				02AC488522B0971000305BAE /* ScanningViewController */,
+				02AC488622B0971800305BAE /* MasksViewController */,
+				02AC488722B0972C00305BAE /* ContactViewController */,
+			);
+			path = TabBarViewController;
+			sourceTree = "<group>";
+		};
 		02BD848822B03377003BC5A9 = {
 			isa = PBXGroup;
 			children = (
@@ -137,8 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				02BD84E622B07EEC003BC5A9 /* MainNavigationController.swift */,
-				02BD84DA22B07B89003BC5A9 /* HomeViewController.swift */,
 				02BD84EF22B08028003BC5A9 /* LoginViewController */,
+				02AC488822B097C300305BAE /* TabBarViewController */,
 				02BD84AF22B044AA003BC5A9 /* TripsViewController */,
 			);
 			path = Views;
@@ -274,12 +326,16 @@
 			files = (
 				02BD84F122B0803E003BC5A9 /* LoginViewController.swift in Sources */,
 				02BD84B522B04D0D003BC5A9 /* TripsTableViewCell.swift in Sources */,
+				02AC488E22B09AF900305BAE /* MasksViewController.swift in Sources */,
 				02BD84BB22B05D45003BC5A9 /* Theme.swift in Sources */,
 				02BD84A922B03F8B003BC5A9 /* TripModel.swift in Sources */,
+				02AC488A22B0982900305BAE /* TabBarViewController.swift in Sources */,
 				02BD84DD22B07BA9003BC5A9 /* LoginCell.swift in Sources */,
 				02BD84E322B07E06003BC5A9 /* PageCell.swift in Sources */,
+				02AC489022B09B0400305BAE /* ContactViewController.swift in Sources */,
 				02BD84D322B06840003BC5A9 /* UIBackButtonExtension.swift in Sources */,
 				02BD84E122B07DE7003BC5A9 /* PageData.swift in Sources */,
+				02AC488C22B09AEE00305BAE /* ScanningViewController.swift in Sources */,
 				02BD84E722B07EEC003BC5A9 /* MainNavigationController.swift in Sources */,
 				02BD849522B03377003BC5A9 /* AppDelegate.swift in Sources */,
 				02BD84AB22B03FA9003BC5A9 /* TripFunctions.swift in Sources */,

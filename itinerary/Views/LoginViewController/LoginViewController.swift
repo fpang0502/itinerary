@@ -56,7 +56,6 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
     }()
     
     @objc func skip() {
-        // we only need to lines to do this
         pageControl.currentPage = pages.count - 1
         nextPage()
     }
@@ -223,7 +222,7 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
         let rootViewController = UIApplication.shared.keyWindow?.rootViewController
         guard let mainNavigationController = rootViewController as? MainNavigationController else { return }
         
-        mainNavigationController.viewControllers = [HomeController()]
+        mainNavigationController.viewControllers = [TabBarViewController()]
         
         UserDefaults.standard.setIsLoggedIn(value: true)
         
@@ -249,15 +248,3 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-

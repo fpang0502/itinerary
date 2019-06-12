@@ -15,8 +15,7 @@ class MainNavigationController: UINavigationController {
         
         if isLoggedIn() {
             //assume user is logged in
-            let homeController = HomeController()
-            viewControllers = [homeController]
+            perform(#selector(showTabBarController), with: nil, afterDelay: 0.01)
         } else {
             perform(#selector(showLoginController), with: nil, afterDelay: 0.01)
         }
@@ -29,6 +28,13 @@ class MainNavigationController: UINavigationController {
     @objc func showLoginController() {
         let loginController = LoginController()
         present(loginController, animated: true, completion: {
+            //perhaps we'll do something here later
+        })
+    }
+    
+    @objc func showTabBarController() {
+        let tabBarController = TabBarViewController()
+        present(tabBarController, animated: true, completion: {
             //perhaps we'll do something here later
         })
     }
