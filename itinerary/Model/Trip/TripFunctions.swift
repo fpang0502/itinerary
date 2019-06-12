@@ -21,11 +21,11 @@ class TripFunctions {
         //  .userInteractive: highest priority
         //  .background: lowest priority
         DispatchQueue.global(qos: .userInteractive).async {
-            if Data.tripModels.count == 0 {
+            if TripData.tripModels.count == 0 {
                 // create fake data
-                Data.tripModels.append(TripModel(title: "Trip to Bali!"))
-                Data.tripModels.append(TripModel(title: "Mexico"))
-                Data.tripModels.append(TripModel(title: "Russian Trip"))
+                TripData.tripModels.append(TripModel(title: "Trip to Bali!"))
+                TripData.tripModels.append(TripModel(title: "Mexico"))
+                TripData.tripModels.append(TripModel(title: "Russian Trip"))
             }
             else {
                 // grab actual data

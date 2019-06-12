@@ -12,7 +12,7 @@
 		02BD849F22B03378003BC5A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BD849D22B03378003BC5A9 /* LaunchScreen.storyboard */; };
 		02BD84A922B03F8B003BC5A9 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84A822B03F8B003BC5A9 /* TripModel.swift */; };
 		02BD84AB22B03FA9003BC5A9 /* TripFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84AA22B03FA9003BC5A9 /* TripFunctions.swift */; };
-		02BD84AD22B0411A003BC5A9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84AC22B0411A003BC5A9 /* Data.swift */; };
+		02BD84AD22B0411A003BC5A9 /* TripData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84AC22B0411A003BC5A9 /* TripData.swift */; };
 		02BD84B122B044C2003BC5A9 /* TripsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BD84B022B044C2003BC5A9 /* TripsViewController.storyboard */; };
 		02BD84B322B044E5003BC5A9 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84B222B044E5003BC5A9 /* TripsViewController.swift */; };
 		02BD84B522B04D0D003BC5A9 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84B422B04D0D003BC5A9 /* TripsTableViewCell.swift */; };
@@ -28,6 +28,14 @@
 		02BD84CB22B05DE5003BC5A9 /* Merriweather-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02BD84C322B05DE5003BC5A9 /* Merriweather-BlackItalic.ttf */; };
 		02BD84CD22B05FFA003BC5A9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02BD84CC22B05FFA003BC5A9 /* Colors.xcassets */; };
 		02BD84D322B06840003BC5A9 /* UIBackButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84D222B06840003BC5A9 /* UIBackButtonExtension.swift */; };
+		02BD84DB22B07B89003BC5A9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84DA22B07B89003BC5A9 /* HomeViewController.swift */; };
+		02BD84DD22B07BA9003BC5A9 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84DC22B07BA9003BC5A9 /* LoginCell.swift */; };
+		02BD84DF22B07DCF003BC5A9 /* UIViewAnchorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84DE22B07DCF003BC5A9 /* UIViewAnchorExtension.swift */; };
+		02BD84E122B07DE7003BC5A9 /* PageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84E022B07DE7003BC5A9 /* PageData.swift */; };
+		02BD84E322B07E06003BC5A9 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84E222B07E06003BC5A9 /* PageCell.swift */; };
+		02BD84E722B07EEC003BC5A9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84E622B07EEC003BC5A9 /* MainNavigationController.swift */; };
+		02BD84E922B07F35003BC5A9 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84E822B07F35003BC5A9 /* UserDefaultsExtension.swift */; };
+		02BD84F122B0803E003BC5A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD84F022B0803E003BC5A9 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +46,7 @@
 		02BD84A022B03378003BC5A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BD84A822B03F8B003BC5A9 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		02BD84AA22B03FA9003BC5A9 /* TripFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFunctions.swift; sourceTree = "<group>"; };
-		02BD84AC22B0411A003BC5A9 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		02BD84AC22B0411A003BC5A9 /* TripData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripData.swift; sourceTree = "<group>"; };
 		02BD84B022B044C2003BC5A9 /* TripsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TripsViewController.storyboard; sourceTree = "<group>"; };
 		02BD84B222B044E5003BC5A9 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		02BD84B422B04D0D003BC5A9 /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
@@ -54,6 +62,14 @@
 		02BD84C322B05DE5003BC5A9 /* Merriweather-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BlackItalic.ttf"; sourceTree = "<group>"; };
 		02BD84CC22B05FFA003BC5A9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		02BD84D222B06840003BC5A9 /* UIBackButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIBackButtonExtension.swift; path = ../../UIBackButtonExtension.swift; sourceTree = "<group>"; };
+		02BD84DA22B07B89003BC5A9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		02BD84DC22B07BA9003BC5A9 /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		02BD84DE22B07DCF003BC5A9 /* UIViewAnchorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewAnchorExtension.swift; path = ../../UIViewAnchorExtension.swift; sourceTree = "<group>"; };
+		02BD84E022B07DE7003BC5A9 /* PageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageData.swift; sourceTree = "<group>"; };
+		02BD84E222B07E06003BC5A9 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		02BD84E622B07EEC003BC5A9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		02BD84E822B07F35003BC5A9 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		02BD84F022B0803E003BC5A9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +117,8 @@
 		02BD84A622B03F5E003BC5A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				02BD84AC22B0411A003BC5A9 /* Data.swift */,
+				02BD84AC22B0411A003BC5A9 /* TripData.swift */,
+				02BD84E022B07DE7003BC5A9 /* PageData.swift */,
 				02BD84A722B03F77003BC5A9 /* Trip */,
 			);
 			path = Model;
@@ -119,6 +136,9 @@
 		02BD84AE22B04497003BC5A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				02BD84E622B07EEC003BC5A9 /* MainNavigationController.swift */,
+				02BD84DA22B07B89003BC5A9 /* HomeViewController.swift */,
+				02BD84EF22B08028003BC5A9 /* LoginViewController */,
 				02BD84AF22B044AA003BC5A9 /* TripsViewController */,
 			);
 			path = Views;
@@ -137,6 +157,8 @@
 		02BD84B822B05761003BC5A9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				02BD84E822B07F35003BC5A9 /* UserDefaultsExtension.swift */,
+				02BD84DE22B07DCF003BC5A9 /* UIViewAnchorExtension.swift */,
 				02BD84D222B06840003BC5A9 /* UIBackButtonExtension.swift */,
 				02BD84B622B0575D003BC5A9 /* UIViewExtension.swift */,
 			);
@@ -158,6 +180,16 @@
 				02BD84CC22B05FFA003BC5A9 /* Colors.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		02BD84EF22B08028003BC5A9 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02BD84F022B0803E003BC5A9 /* LoginViewController.swift */,
+				02BD84DC22B07BA9003BC5A9 /* LoginCell.swift */,
+				02BD84E222B07E06003BC5A9 /* PageCell.swift */,
+			);
+			path = LoginViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,15 +272,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02BD84F122B0803E003BC5A9 /* LoginViewController.swift in Sources */,
 				02BD84B522B04D0D003BC5A9 /* TripsTableViewCell.swift in Sources */,
 				02BD84BB22B05D45003BC5A9 /* Theme.swift in Sources */,
 				02BD84A922B03F8B003BC5A9 /* TripModel.swift in Sources */,
+				02BD84DD22B07BA9003BC5A9 /* LoginCell.swift in Sources */,
+				02BD84E322B07E06003BC5A9 /* PageCell.swift in Sources */,
 				02BD84D322B06840003BC5A9 /* UIBackButtonExtension.swift in Sources */,
+				02BD84E122B07DE7003BC5A9 /* PageData.swift in Sources */,
+				02BD84E722B07EEC003BC5A9 /* MainNavigationController.swift in Sources */,
 				02BD849522B03377003BC5A9 /* AppDelegate.swift in Sources */,
 				02BD84AB22B03FA9003BC5A9 /* TripFunctions.swift in Sources */,
 				02BD84B722B0575D003BC5A9 /* UIViewExtension.swift in Sources */,
-				02BD84AD22B0411A003BC5A9 /* Data.swift in Sources */,
+				02BD84AD22B0411A003BC5A9 /* TripData.swift in Sources */,
 				02BD84B322B044E5003BC5A9 /* TripsViewController.swift in Sources */,
+				02BD84DB22B07B89003BC5A9 /* HomeViewController.swift in Sources */,
+				02BD84E922B07F35003BC5A9 /* UserDefaultsExtension.swift in Sources */,
+				02BD84DF22B07DCF003BC5A9 /* UIViewAnchorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
