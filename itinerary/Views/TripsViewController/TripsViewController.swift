@@ -42,7 +42,7 @@ extension TripsViewController: UITableViewDataSource, UITableViewDelegate {
     
     // how many rows will it display? this is referenced in Data.tripModels since we're populating the trips
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Data.tripModels.count
+        return TripData.tripModels.count
     }
     
     // I have a row available, what do you want to do with it?
@@ -63,7 +63,7 @@ extension TripsViewController: UITableViewDataSource, UITableViewDelegate {
 //****** using custom styling
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TripsTableViewCell
         
-        cell.setup(tripModel: Data.tripModels[indexPath.row])
+        cell.setup(tripModel: TripData.tripModels[indexPath.row])
         
         return cell
     }

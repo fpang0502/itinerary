@@ -30,11 +30,11 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
     let loginCellId = "loginCellId"
     
     let pages: [Page] = {
-        let firstPage = Page(title: "Share a great listen", message: "It's free to send your books to the people in your life. Every recipient's first book is on us.", imageName: "page1")
+        let firstPage = Page(title: "A Tiring Problem", message: "Sleep apnea can be difficult to handle. We streamline the process of finding a mask that pleasantly embraces your face so you can enjoy your sleep.", imageName: "page1")
         
-        let secondPage = Page(title: "Send from your library", message: "Tap the More menu next to any book. Choose \"Send this Book\"", imageName: "page2")
+        let secondPage = Page(title: "Masks That Fit", message: "We create a 3D model of your face to custom fit masks so you feel comfortable everytime you’re wearing them.", imageName: "page2")
         
-        let thirdPage = Page(title: "Send from the player", message: "Tap the More menu in the upper corner. Choose \"Send this Book\"", imageName: "page3")
+        let thirdPage = Page(title: "Tailored For You", message: "Get rid of the discomfort and hassle of trying masks over and over again. Get the good nights rest you deserve.", imageName: "page3")
         
         return [firstPage, secondPage, thirdPage]
     }()
@@ -42,7 +42,7 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
     lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.pageIndicatorTintColor = .lightGray
-        pc.currentPageIndicatorTintColor = UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1)
+        pc.currentPageIndicatorTintColor = Theme.accent
         pc.numberOfPages = self.pages.count + 1
         return pc
     }()
@@ -50,7 +50,7 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
     lazy var skipButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
+        button.setTitleColor(Theme.accent, for: .normal)
         button.addTarget(self, action: #selector(skip), for: .touchUpInside)
         return button
     }()
@@ -64,7 +64,7 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
     lazy var nextButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Next", for: .normal)
-        button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
+        button.setTitleColor(Theme.accent, for: .normal)
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         return button
     }()
@@ -77,11 +77,8 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
         
         //second last page
         if pageControl.currentPage == pages.count - 1 {
-            moveControlConstraintsOffScreen()
-            
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
+            showLastPage()
+            return
         }
         
         let indexPath = IndexPath(item: pageControl.currentPage + 1, section: 0)
@@ -89,9 +86,21 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
         pageControl.currentPage += 1
     }
     
+    @objc func showLastPage() {
+        moveControlConstraintsOffScreen()
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        let indexPath = IndexPath(item: pages.count, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        pageControl.currentPage = pages.count + 1
+    }
+    
     var pageControlBottomAnchor: NSLayoutConstraint?
-    var skipButtonTopAnchor: NSLayoutConstraint?
-    var nextButtonTopAnchor: NSLayoutConstraint?
+    var skipButtonBottomAnchor: NSLayoutConstraint?
+    var nextButtonBottomAnchor: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,14 +114,29 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
         
         pageControlBottomAnchor = pageControl.anchor(nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 40)[1]
         
-        skipButtonTopAnchor = skipButton.anchor(view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
+        skipButtonBottomAnchor = skipButton.anchor(nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
         
-        nextButtonTopAnchor = nextButton.anchor(view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
+        nextButtonBottomAnchor = nextButton.anchor(nil, left: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
         
         //use autolayout instead
         collectionView.anchorToTop(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
         registerCells()
+        if isAppAlreadyLaunchedOnce() {
+            showLastPage()
+        }
+    }
+    
+    func isAppAlreadyLaunchedOnce()->Bool{
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            print("App already launched")
+            return true
+        }else{
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            print("App launched first time")
+            return false
+        }
     }
     
     fileprivate func observeKeyboardNotifications() {
@@ -153,8 +177,8 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
         } else {
             //back on regular pages
             pageControlBottomAnchor?.constant = 0
-            skipButtonTopAnchor?.constant = 0
-            nextButtonTopAnchor?.constant = 0
+            skipButtonBottomAnchor?.constant = 0
+            nextButtonBottomAnchor?.constant = 0
         }
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
@@ -164,8 +188,8 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
     
     fileprivate func moveControlConstraintsOffScreen() {
         pageControlBottomAnchor?.constant = 80
-        skipButtonTopAnchor?.constant = -80
-        nextButtonTopAnchor?.constant = -80
+        skipButtonBottomAnchor?.constant = -80
+        nextButtonBottomAnchor?.constant = 80
     }
     
     fileprivate func registerCells() {

@@ -13,34 +13,17 @@ class MainNavigationController: UINavigationController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        if isAppAlreadyLaunchedOnce() {
-            if isLoggedIn() {
-                //assume user is logged in
-                let homeController = HomeController()
-                viewControllers = [homeController]
-            } else {
-                perform(#selector(showLoginController), with: nil, afterDelay: 0.01)
-            }
-        }
-        else {
-            print("Onboarding should happen here.")
+        if isLoggedIn() {
+            //assume user is logged in
+            let homeController = HomeController()
+            viewControllers = [homeController]
+        } else {
+            perform(#selector(showLoginController), with: nil, afterDelay: 0.01)
         }
     }
     
     fileprivate func isLoggedIn() -> Bool {
         return UserDefaults.standard.isLoggedIn()
-    }
-    
-    func isAppAlreadyLaunchedOnce()->Bool{
-        let defaults = UserDefaults.standard
-        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
-            print("App already launched")
-            return true
-        }else{
-            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            print("App launched first time")
-            return false
-        }
     }
     
     @objc func showLoginController() {
